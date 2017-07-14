@@ -5,7 +5,7 @@
  */
 
 import React from 'React';
-import {Text, AppRegistry, View} from 'react-native';
+import {Text, AppRegistry, View, StyleSheet} from 'react-native';
 import Header from './src/components/Header';
 import AlbumList from './src/components/AlbumList';
 
@@ -13,16 +13,14 @@ import AlbumList from './src/components/AlbumList';
 
 const SampleApplication = () => (
 
-  <View>
+  <View style={styles.fillViewPort}>
 
-      <Header headerText={'Albums'}></Header>
-      <AlbumList></AlbumList>
+    <Header headerText={'Albums'}></Header>
+    <AlbumList/>
 
   </View>
 
 );
-AppRegistry.registerComponent('SampleApplication', () => SampleApplication);
-
 
 // import React, { Component } from 'react';
 // import {
@@ -51,23 +49,29 @@ AppRegistry.registerComponent('SampleApplication', () => SampleApplication);
 //   }
 // }
 //
-// const styles = StyleSheet.create({
-//   container: {
-//     flex: 1,
-//     justifyContent: 'center',
-//     alignItems: 'center',
-//     backgroundColor: '#F5FCFF',
-//   },
-//   welcome: {
-//     fontSize: 20,
-//     textAlign: 'center',
-//     margin: 10,
-//   },
-//   instructions: {
-//     textAlign: 'center',
-//     color: '#333333',
-//     marginBottom: 5,
-//   },
-// });
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#F5FCFF'
+  },
+  welcome: {
+    fontSize: 20,
+    textAlign: 'center',
+    margin: 10
+  },
+  instructions: {
+    textAlign: 'center',
+    color: '#000',
+    marginBottom: 5
+  },
+
+  // this is the style which makes Ui fit
+  fillViewPort: {
+    flex: 1
+  }
+
+});
 //
-// AppRegistry.registerComponent('SampleApplication', () => SampleApplication);
+AppRegistry.registerComponent('SampleApplication', () => SampleApplication);

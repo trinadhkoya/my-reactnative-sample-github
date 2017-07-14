@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
-import {Text, View,Image} from 'react-native';
+import {Text, View, Image,Linking} from 'react-native';
 import AlbumCard from './AlbumCard';
 import AlbumCardSection from './AlbumCardSection';
+import AlbumButton from './AlbumButton';
 
 class AlbumDetail extends React.Component {
 
@@ -11,6 +12,7 @@ class AlbumDetail extends React.Component {
 
   render() {
     return (
+
       <AlbumCard>
 
         <AlbumCardSection>
@@ -18,16 +20,37 @@ class AlbumDetail extends React.Component {
           {/* this is for imagebased View*/}
           <View>
 
-              <Image source={{uri:this.props.album.thumbnail_image}} style={styles.thumbnail_imageStyle}/>
+            <Image source={{
+              uri: this.props.album.thumbnail_image
+            }} style={styles.thumbnail_imageStyle}></Image>
 
           </View>
 
           {/* this is for Textbased  View */}
           <View style={styles.headerContentStyle}>
-            <Text>{this.props.album.title}</Text>
+            <Text style={styles.headerTextStyle}>{this.props.album.title}</Text>
             <Text>{this.props.album.artist}</Text>
           </View>
         </AlbumCardSection>
+
+        <AlbumCardSection>
+
+          <View>
+
+            <Image source={{
+              uri: this.props.album.image
+            }} style={styles.bannerImageStyle}></Image>
+
+          </View>
+
+        </AlbumCardSection>
+
+        <AlbumCardSection>
+
+          <AlbumButton whenPressed={() => Linking.openURL(this.props.album.url)} buttonText={this.props.album.title}></AlbumButton>
+
+        </AlbumCardSection>
+
       </AlbumCard>
     );
 
@@ -39,15 +62,31 @@ const styles = {
 
   headerContentStyle: {
 
-      flexDirection:'column',
-      justifyContent:'space-around'
+    flexDirection: 'column',
+    justifyContent: 'space-around'
 
   },
-  thumbnail_imageStyle:{
-    height:50,
-    width:50,
+
+  headerTextStyle: {
+    fontSize: 18,
+    color: '#000'
+  },
+
+  thumbnail_imageStyle: {
+    height: 50,
+    width: 50
+  },
+
+  thumbnailContainerStyle: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginLeft: 10,
+    marginRight: 10
+  },
+  bannerImageStyle: {
+    height: 300,
+    flex: 1,
+    width: 320
   }
-
-
 }
 export default AlbumDetail;
