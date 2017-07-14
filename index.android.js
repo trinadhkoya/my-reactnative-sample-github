@@ -21,6 +21,8 @@ const SampleApplication = () => (
   </View>
 
 );
+AppRegistry.registerComponent('SampleApplication', () => SampleApplication);
+
 
 // import React, { Component } from 'react';
 // import {
@@ -69,4 +71,3 @@ const SampleApplication = () => (
 // });
 //
 // AppRegistry.registerComponent('SampleApplication', () => SampleApplication);
-AppRegistry.registerComponent('SampleApplication', () => SampleApplication);
