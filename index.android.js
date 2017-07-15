@@ -7,7 +7,7 @@
 import React from 'React';
 import {Text, AppRegistry, View, StyleSheet} from 'react-native';
 import Header from './src/components/Header';
-import AlbumList from './src/components/AlbumList';
+import RepositoryList from './src/components/RepositoryList';
 
 // create a Component
 
@@ -16,7 +16,7 @@ const SampleApplication = () => (
   <View style={styles.fillViewPort}>
 
     <Header headerText={'Albums'}></Header>
-    <AlbumList/>
+    <RepositoryList/>
 
   </View>
 

@@ -1,10 +1,10 @@
 import React, {Component} from 'react';
-import {Text, View, Image,Linking} from 'react-native';
+import {Text, View, Image, Linking} from 'react-native';
 import AlbumCard from './AlbumCard';
-import AlbumCardSection from './AlbumCardSection';
-import AlbumButton from './AlbumButton';
+import RepositoryCardSection from './RepositoryCardSection';
+import RepositoryButton from './RepositoryButton';
 
-class AlbumDetail extends React.Component {
+class RepositoryDetail extends React.Component {
 
   constructor(props) {
     super(props);
@@ -15,41 +15,41 @@ class AlbumDetail extends React.Component {
 
       <AlbumCard>
 
-        <AlbumCardSection>
+        <RepositoryCardSection>
 
           {/* this is for imagebased View*/}
           <View>
 
             <Image source={{
-              uri: this.props.album.thumbnail_image
+              uri: this.props.repo.owner.avatar_url
             }} style={styles.thumbnail_imageStyle}></Image>
 
           </View>
 
           {/* this is for Textbased  View */}
           <View style={styles.headerContentStyle}>
-            <Text style={styles.headerTextStyle}>{this.props.album.title}</Text>
-            <Text>{this.props.album.artist}</Text>
+            <Text style={styles.headerTextStyle}>{this.props.repo.name}</Text>
+            <Text>{this.props.repo.owner.login}</Text>
           </View>
-        </AlbumCardSection>
+        </RepositoryCardSection>
 
-        <AlbumCardSection>
+        <RepositoryCardSection>
 
           <View>
 
             <Image source={{
-              uri: this.props.album.image
+              uri: this.props.repo.owner.avatar_url
             }} style={styles.bannerImageStyle}></Image>
 
           </View>
 
-        </AlbumCardSection>
+        </RepositoryCardSection>
 
-        <AlbumCardSection>
+        <RepositoryCardSection>
 
-          <AlbumButton whenPressed={() => Linking.openURL(this.props.album.url)} buttonText={this.props.album.title}></AlbumButton>
+          <RepositoryButton whenPressed={() => Linking.openURL(this.props.repo.owner.html_url)} buttonText={this.props.repo.name}></RepositoryButton>
 
-        </AlbumCardSection>
+        </RepositoryCardSection>
 
       </AlbumCard>
     );
@@ -89,4 +89,4 @@ const styles = {
     width: 320
   }
 }
-export default AlbumDetail;
+export default RepositoryDetail;

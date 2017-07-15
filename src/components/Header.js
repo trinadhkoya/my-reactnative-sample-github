@@ -10,7 +10,7 @@ const Header = () => {
   return (
     <View style={viewStyle}>
       <Text style={textStyle}>
-        Albums</Text>
+        GitHub:TRINADH KOYA</Text>
     </View>
   );
 };
@@ -34,7 +34,8 @@ const styles = {
   },
 
   textStyle: {
-    fontSize: 20
+    fontSize: 20,
+    color: '#000'
   }
 
 }

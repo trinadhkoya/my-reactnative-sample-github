@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {View} from 'react-native';
 
-class AlbumCard extends Component {
+class RepositoryCard extends Component {
   constructor(props) {
     super(props);
   }
@@ -37,4 +37,4 @@ const styles = {
   }
 }
 
-export default AlbumCard;
+export default RepositoryCard;

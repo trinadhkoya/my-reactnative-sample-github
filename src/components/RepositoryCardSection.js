@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {View} from 'react-native';
 
-class AlbumCardSection extends Component {
+class RepositoryCardSection extends Component {
 
   constructor(props) {
     super(props);
@@ -11,14 +11,10 @@ class AlbumCardSection extends Component {
 
     return (
       <View style={styles.containerStyle}>
-      {this.props.children}
-    </View>
+        {this.props.children}
+      </View>
     );
   }
-
-
-
-
 
 }
 
@@ -29,11 +25,11 @@ const styles = {
     padding: 5,
     backgroundColor: '#fff',
     justifyContent: 'flex-start',
-    flexDirection:'row',
-    borderColor:'#ddd',
-    position:'relative',
+    flexDirection: 'row',
+    borderColor: '#ddd',
+    position: 'relative'
   }
 
 };
 
-export default AlbumCardSection;
+export default RepositoryCardSection;
