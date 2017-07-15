@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {Text, View, Image, Linking} from 'react-native';
-import AlbumCard from './AlbumCard';
+import RepositoryCard from './RepositoryCard';
 import RepositoryCardSection from './RepositoryCardSection';
 import RepositoryButton from './RepositoryButton';
 
