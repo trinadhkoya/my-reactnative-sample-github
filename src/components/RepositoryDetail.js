@@ -13,7 +13,7 @@ class RepositoryDetail extends React.Component {
   render() {
     return (
 
-      <AlbumCard>
+      <RepositoryCard>
 
         <RepositoryCardSection>
 
@@ -51,7 +51,7 @@ class RepositoryDetail extends React.Component {
 
         </RepositoryCardSection>
 
-      </AlbumCard>
+      </RepositoryCard>
     );
 
   };
